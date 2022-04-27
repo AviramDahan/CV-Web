@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cvwebb 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cvwebb
+  template:
+    metadata:
+      labels:
+        app: cvwebb 
+    spec:
+      containers:
+        - name: cvwebb 
+          image: cvweb.azurecr.io/cvwebb
+          ports:
+          - containerPort: 80
